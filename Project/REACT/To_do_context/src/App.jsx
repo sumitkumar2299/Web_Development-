@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import { TodoProvider } from './Context/TodoContext'
 import { useEffect } from 'react'
+import { TodoForm, Todoitem } from './Components'
 
 function App() {
 
@@ -35,20 +36,28 @@ function App() {
 
 
   useEffect(()=> {
-    const todos = JSON.parse(localStorage.getItem("todos"))
+    const todos = JSON.parse(localStorage.getItem("todo") )
     if(todos && todos.length > 0){
       setTodos(todos)
     }
   },[])
 
   useEffect(()=> {
-    localStorage.setItem("todos", JSON.stringify(todos))
+    localStorage.setItem("todo", JSON.stringify(todos))
   },[todos])
   
 
   return (
     <TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,toogleComplete}}>
-     <h1 className='bg-gray-600'>learning react </h1>
+     <TodoForm/>
+     {
+      todos.map((todo)=>(
+        <div key={todo.id}>
+          <Todoitem todo = {todo}/>
+        </div>
+
+      ) )
+     }
      
     </TodoProvider>
   )
