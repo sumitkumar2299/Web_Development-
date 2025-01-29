@@ -1,0 +1,11 @@
+.response{
+    text-align:center;
+}
+
+@media screen and (max-width:600px){
+    h1{
+        background-color:rgb(28, 15, 173)
+        
+    }
+ 
+}

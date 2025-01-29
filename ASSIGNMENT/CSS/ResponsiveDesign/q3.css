@@ -1,0 +1,35 @@
+body{
+    box-sizing: border-box;
+    margin : 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+.navbar{
+    display : flex;
+    list-style-type: none;
+    gap: 10px;
+    justify-content:space-between;
+    background-color: black;
+    color: white;
+    
+}
+
+li{
+    padding-right: 20px;
+    
+    
+}
+
+@media screen and (max-width: 768px){
+    .navbar{
+        
+        flex-direction: column;
+        background-color: gray;
+        text-align: center;
+        border: none;
+    }
+}
