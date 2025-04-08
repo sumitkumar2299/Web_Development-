@@ -1,0 +1,17 @@
+{
+  "name": "mongo_class",
+  "version": "1.0.0",
+  "description": "Solving mongodb assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon src/index.js"
+  },
+  "author": "sumit kumar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1",
+    "nodemon": "^3.1.9"
+  }
+}
