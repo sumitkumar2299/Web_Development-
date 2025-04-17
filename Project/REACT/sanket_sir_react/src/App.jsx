@@ -3,6 +3,7 @@ import './App.css'
 import Pokedex from './Components/Pokedex/Pokedex'
 import PokemonList from './Components/PokemonList/PokemonList'
 import Search from './Components/Search/Search'
+import CustomRoutes from './Routes/CustomRoutes'
 
 function App() {
   
@@ -10,9 +11,10 @@ function App() {
   return (
     <>
 
-    <Pokedex/>
+    {/* <Pokedex/>
     <Search/>
-    <PokemonList/>
+    <PokemonList/> */}
+    <CustomRoutes/>
   
 
     </>
