@@ -23,12 +23,18 @@ function PokemonList(){
     const [PokemonList,setPokemonList] = useState([]);
     const[isLoading,setIsLoading] = useState(true);
 
-    const POKEDEX_URL = 'https://pokeapi.co/api/v2/pokemon'
+    const[nextUrl,setNextUrl] = useState('');
+    const[prevUrl,setPrevUrl] = useState('');
+
+    const [POKEDEX_URL,setPokedex_url] = useState('https://pokeapi.co/api/v2/pokemon')
 
 
     async function downloadPokemons(){
+        setIsLoading(true)
         const response = await axios.get(POKEDEX_URL) // this downloads the result of 20 pokemons
         console.log(response.data)
+        setNextUrl(response.data.next);
+        setPrevUrl(response.data.previous);
         const pokemonResults = response.data.results; // we get the array of pokemons from result 
         // iterating over the array of pokemons, and using their url, to create array of promises.
         const pokemonResultPromise = pokemonResults.map((pokemon)=> axios.get(pokemon.url));
@@ -56,7 +62,9 @@ function PokemonList(){
 
     useEffect(()=>{
         downloadPokemons();
-    },[])
+    },[POKEDEX_URL])
+
+    // useeffect ka matlab jab jab pokedex_url render hoga tab tab downloadpokemons() function execute hoga.
 
     return(
         <>
@@ -64,6 +72,12 @@ function PokemonList(){
         {(isLoading)?'Loading':
         PokemonList.map((p) => <Pokemon name = {p.name} image = {p.image} key = {p.id}/>)
         }
+
+        <div className="m-0 text-center px-1">
+            <button className="cursor-pointer ml-1" disabled={prevUrl == null} onClick={()=>setPokedex_url(prevUrl)} >Previous</button>
+            {'  '}
+            <button className="cursor-pointer" disabled = {nextUrl == null}  onClick={()=>setPokedex_url(nextUrl)}>Next</button>
+        </div>
         </>
     )
 
