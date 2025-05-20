@@ -8,3 +8,6 @@
 // applyDiscountG
 //  Use bind to create a new function calculateDiscount that is bound to the discountCalculator object and
 // can be reused.
+
+
+console.log("hello world i am will solve this question");
