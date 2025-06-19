@@ -54,8 +54,7 @@ This is a personal learning repository. However, if you find a bug or want to im
 
 If you have any suggestions or want to connect, feel free to reach out:
 
-- 🔗 [LinkedIn](https://www.linkedin.com/in/sumitkum2299)  
-- 📧 sumitkum2299@gmail.com
+- 📧 sumitofficialme@gmail.com
 
 ---
 
